@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="DetermineCommunicationChannels" name="Determine Communication Channels">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="Application Status" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>status</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_17jba2w" label="Reminder #" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_0s6w43x" typeRef="integer">        <text>speedup</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Reminder" name="toBeSpedUp" typeRef="boolean" />
+      <output id="OutputClause_1bmqww7" label="Via Channel" name="channel" typeRef="string" />
+      <rule id="row-112103306-2">
+        <inputEntry id="UnaryTests_1fxs0i4">        <text><![CDATA["new"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_12hzqdu">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0uhxzs1">        <text>false</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0rkbyxz">        <text></text>
+</outputEntry>
+      </rule>
+      <rule id="row-112103306-3">
+        <inputEntry id="UnaryTests_0x0aicq">        <text><![CDATA["to-be-signed"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0l9y0wd">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_071pyis">        <text>true</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1qgvd5y">        <text><![CDATA["Mail"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-112103306-5">
+        <inputEntry id="UnaryTests_150nxhe">        <text><![CDATA["signed"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0vpqy3h">        <text>1</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0jrc08e">        <text>true</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1mcj290">        <text><![CDATA["Mail"]]></text>
+</outputEntry>
+      </rule>
+      <rule id="row-112103306-6">
+        <inputEntry id="UnaryTests_0rn1fte">        <text><![CDATA["signed"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1wuuprm">        <text><![CDATA[>1]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_05z0uex">        <text>true</text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_02m7w7c">        <text><![CDATA["Phone"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
